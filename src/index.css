@@ -232,3 +232,11 @@ body {
 .logo__link {
   text-decoration: none !important;
 }
+.reverso-sm {
+  flex-direction: column-reverse;
+}
+@media screen and (min-width: 576px) {
+  .reverso-sm {
+    flex-direction: row;
+  }
+}

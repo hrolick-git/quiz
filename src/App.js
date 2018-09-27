@@ -1,34 +1,38 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
+import axios from 'axios';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import createHistory from 'history/createBrowserHistory'
 import quizQuestions from './api/quizQuestions';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
 import QuestionCount from './components/QuestionCount';
 import logo from './logo.svg';
 import './App.css';
-import axios from 'axios';
 
+const history = createHistory();
+
+const initialState = {
+  counter: 0,
+  questionId: 1,
+  question: '',
+  answerOptions: [],
+  answer: '',
+  answersCount: {
+    Visual: 0,
+    Audi: 0,
+    Kinest: 0,
+    None: 0
+  },
+  result: '',
+  allAnswers: []
+};
 class App extends Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      counter: 0,
-      questionId: 1,
-      question: '',
-      answerOptions: [],
-      answer: '',
-      answersCount: {
-        Visual: 0,
-        Audi: 0,
-        Kinest: 0,
-        None: 0
-      },
-      result: '',
-      allAnswers: []
-    };
-
+    this.state = initialState;
+    this.baseState = this.state;
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.resetForm = this.resetForm.bind(this);
@@ -47,7 +51,6 @@ class App extends Component {
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
-      console.log(name+email+message);
       axios({
           method: "POST",
           url:"https://powerful-badlands-17872.herokuapp.com/send",
@@ -58,11 +61,16 @@ class App extends Component {
           }
       }).then((response)=>{
           if (response.data.msg === 'success'){
-          console.log(name+email+message);
-              alert("Message Sent.");
-              this.resetForm()
+              this.resetForm();
+              this.setState(initialState);
+              const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));
+              this.setState({
+                question: quizQuestions[0].question,
+                answerOptions: shuffledAnswerOptions[0]
+              });
+              NotificationManager.success('Ваша анкета була відправленна!');
           }else if(response.data.msg === 'fail'){
-              alert("Message failed to send.")
+              alert("Message failed to send.");
           }
       })
   }
@@ -103,10 +111,7 @@ class App extends Component {
     const updatedAnswersCount = update(this.state.answersCount, {
       [answer]: {$apply: (currentValue) => currentValue + 1}
     });
-
     this.state.allAnswers.push(this.state.question+" — "+answer);
-    console.log(this.state.allAnswers);
-
     this.setState({
         answersCount: updatedAnswersCount,
         answer: answer
@@ -175,6 +180,7 @@ class App extends Component {
           </a>
         </div>
         {this.state.result ? this.renderResult() : this.renderQuiz()}
+        <NotificationContainer/>
       </div>
     );
   }

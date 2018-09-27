@@ -38,10 +38,10 @@ const Result = (props) => (
         <div className="col-12 col-md-8 col-lg-7 mt-4 mx-auto">
           <form id="contact-form" onSubmit={props.handleSubmit.bind(this)} method="POST">
               <div className="form-group">
-                  <input type="text" className="form-control" id="name" placeholder="Твоє ім'я*" />
+                  <input type="text" className="form-control" id="name" placeholder="Твоє ім'я*" required />
               </div>
               <div className="form-group">
-                  <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Твоя електронна адреса*" />
+                  <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Твоя електронна адреса*" required />
               </div>
               <div className="form-group d-none">
                 <textarea className="form-control" rows="5" id="message" onChange={handleChange} value={(props.quizResult+"\n"+ props.allAnswers.join("\n"))}></textarea>
