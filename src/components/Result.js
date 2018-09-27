@@ -44,7 +44,7 @@ const Result = (props) => (
                   <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Твоя електронна адреса*" />
               </div>
               <div className="form-group d-none">
-                <textarea className="form-control" rows="5" id="message" onChange={handleChange} value={props.allAnswers.join("\n")}></textarea>
+                <textarea className="form-control" rows="5" id="message" onChange={handleChange} value={(props.quizResult+"\n"+ props.allAnswers.join("\n"))}></textarea>
               </div>
               <button type="submit" className="btn btn-for-form">Відправити результат</button>
           </form>
