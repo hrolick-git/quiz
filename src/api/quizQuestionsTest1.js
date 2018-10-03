@@ -1,4 +1,4 @@
-var quizQuestions = [
+var quizQuestionsTest1 = [
   {
       question: "1. Обожнюю спостерігати за хмарами та зірками.",
       answers: [
@@ -721,4 +721,4 @@ var quizQuestions = [
   }
 ];
 
-export default quizQuestions;
+export default quizQuestionsTest1;
