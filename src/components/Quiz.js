@@ -27,7 +27,7 @@ function Quiz(props) {
           counter={props.questionId}
           total={props.questionTotal}
         />
-        <div className="quiz__wrap mb-5">
+      <div className="quiz__wrap mb-5 px-4">
               <Question content={props.question} />
               <ul className="answerOptions row mt-4">
                 {props.answerOptions.map(renderAnswerOptions)}

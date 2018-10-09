@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import update from 'react-addons-update';
 import quizQuestionsTest2 from '../api/quizQuestionsTest2';
 import $ from 'jquery';
-import bodymovin from 'bodymovin';
-import * as animationData from '../svg/confetti.json';
-import * as animationDataWhal from '../svg/empty_status.json';
-import * as animationDataBox from '../svg/box.json';
 
 const initialState = {
   counter: 0,
@@ -23,8 +19,6 @@ const initialState = {
   allAnswers: []
 };
 
-var animFireworks, animWhal, animBox;
-
 class Test_2 extends Component {
   constructor(props) {
     super(props);
@@ -32,63 +26,6 @@ class Test_2 extends Component {
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
     this.summCountAnswer = this.summCountAnswer.bind(this);
     this.handleAnswerClick = this.handleAnswerClick.bind(this);
-  }
-
-  componentDidMount() {
-    animFireworks = bodymovin.loadAnimation({
-      container: document.getElementById('bm'), // the dom element
-      renderer: 'svg',
-      loop: false,
-      autoplay: false,
-      animationData: animationData, // the animation data
-      rendererSettings: {
-        scaleMode: 'noScale',
-        clearCanvas: false,
-        progressiveLoad: false, // Boolean, only svg renderer, loads dom elements when needed. Might speed up initialization for large number of elements.
-        hideOnTransparent: true, //Boolean, only svg renderer, hides elements when opacity reaches 0 (defaults to true)
-        className: 'some-css-class-name'
-      }
-    });
-    animWhal = bodymovin.loadAnimation({
-      container: document.getElementById('a-whal'), // the dom element
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      animationData: animationDataWhal, // the animation data
-      rendererSettings: {
-        scaleMode: 'noScale',
-        clearCanvas: false,
-        progressiveLoad: false, // Boolean, only svg renderer, loads dom elements when needed. Might speed up initialization for large number of elements.
-        hideOnTransparent: true, //Boolean, only svg renderer, hides elements when opacity reaches 0 (defaults to true)
-        className: 'anim_whal'
-      }
-    });
-    animBox = bodymovin.loadAnimation({
-      container: document.getElementById('a-box'), // the dom element
-      renderer: 'svg',
-      loop: false,
-      autoplay: false,
-      animationData: animationDataBox, // the animation data
-      rendererSettings: {
-        scaleMode: 'noScale',
-        clearCanvas: false,
-        progressiveLoad: false, // Boolean, only svg renderer, loads dom elements when needed. Might speed up initialization for large number of elements.
-        hideOnTransparent: true, //Boolean, only svg renderer, hides elements when opacity reaches 0 (defaults to true)
-        className: 'anim_box'
-      }
-    });
-    $(".show").on("click", function(){
-        animBox.setDirection(1);
-        $("#a-box").show();
-        animBox.play();
-    });
-    $(".hide").on("click", function(){
-        animBox.setDirection(-1);
-        animBox.play();
-        setTimeout(function(){
-          $("#a-box").hide();
-        }, 1500);
-    });
   }
 
   summCountAnswer(name) {
@@ -133,13 +70,9 @@ class Test_2 extends Component {
   }
 
   handleAnswerClick(e) {
-    $("#bm").show();
-    $("#bm").offset({left:e.pageX-50,top:e.pageY-50});
-    animFireworks.play();
-    setTimeout(function(){
-      animFireworks.stop();
-      $("#bm").hide();
-    }, 1500);
+    if ($('div:not(:has(:radio:checked))').length) {
+        alert("At least one group is blank");
+    }
   }
 
   handleAnswerSelected(e){
@@ -155,7 +88,6 @@ class Test_2 extends Component {
   render() {
     return (
       <div className="container">
-          <div id="bm"></div>
         <div className="row">
         </div>
         <div className="row">
@@ -167,9 +99,7 @@ class Test_2 extends Component {
           <div className="col-12">
             <div className="row text-center justify-content-center">
                 <div className="col-12 col-md-4">
-                  {/* <img className="quiz_info__img" src="./svg/test-header-1.svg" alt=""/> */}
-                  <div id="a-box" className="hide"></div>
-                  <div id="a-whal" className="mx-auto show"></div>
+                  <img className="quiz_info__img" src="./svg/test-header-1.svg" alt=""/>
                   <p className="quiz_info__text mt-3">Тест займає менше 5 хвилин.</p>
                 </div>
                 <div className="col-12 col-md-4">
@@ -184,9 +114,10 @@ class Test_2 extends Component {
           </div>
         </div>
         <hr/>
+      <div className="row quiz__wrap px-sm-4">
         {quizQuestionsTest2.map((question, i1) => {
           return(
-            <div key={i1} className="mt-5">
+            <div key={i1} className="mb-5 col-12">
               <p className="quiz__question__title">{question.question}</p>
               <div className="">
                 {question.subquestions.map((subquestion, i2) => {
@@ -221,11 +152,10 @@ class Test_2 extends Component {
             </div>
           );
         })}
+      </div>
       <hr/>
-      <div className="row">
-        <div className="col-12 text-center">
+    <div className="col-12 text-center mb-5">
         <button type="button" disabled>Перевірити результат</button>
-        </div>
       </div>
     </div>
     );
