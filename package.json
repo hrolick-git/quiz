@@ -12,6 +12,7 @@
     "react": "^16.5.2",
     "react-addons-css-transition-group": "^15.6.2",
     "react-addons-update": "^15.6.2",
+    "react-designer": "^1.0.8",
     "react-dom": "^16.5.2",
     "react-notifications": "^1.4.3",
     "react-router-dom": "^4.3.1",
