@@ -261,6 +261,8 @@ input:checked + .quiz_answer_negative.quiz_answer_circle,
   color: #fff;
   background-color: #94657E;
   border-color: #94657E;
+  min-width: 190px;
+  text-align: center;
 }
 .result__title {
   color: #94657E;

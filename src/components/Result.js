@@ -46,7 +46,7 @@ const Result = (props) => (
               <div className="form-group d-none">
                 <textarea className="form-control" rows="5" id="message" onChange={handleChange} value={(props.quizResult+"\n"+ props.allAnswers.join("\n"))}></textarea>
               </div>
-              <button type="submit" className="btn btn-for-form">Відправити результат</button>
+              <button type="submit" className="btn btn-for-form">{!props.sending?"Відправити результат":<i class="fas fa-spinner fa-spin"></i>}</button>
           </form>
         </div>
       </div>

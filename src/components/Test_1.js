@@ -22,7 +22,8 @@ const initialState = {
     None: 0
   },
   result: '',
-  allAnswers: []
+  allAnswers: [],
+  sending: false
 };
 class Test_1 extends Component {
 
@@ -48,6 +49,7 @@ class Test_1 extends Component {
       const name = document.getElementById('name').value;
       // const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
+      this.setState({sending:true});
       axios({
           method: "POST",
           url:"https://powerful-badlands-17872.herokuapp.com/send",
@@ -188,7 +190,11 @@ class Test_1 extends Component {
 
   renderResult() {
     return (
-      <Result quizResult={this.state.result} allAnswers={this.state.allAnswers} handleSubmit={this.handleSubmit} />
+      <Result
+        quizResult={this.state.result}
+        allAnswers={this.state.allAnswers}
+        handleSubmit={this.handleSubmit}
+        sending={this.state.sending} />
     );
   }
 
