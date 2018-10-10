@@ -54,7 +54,7 @@ class Test_1 extends Component {
           data: {
               name: name,
               email: email,
-              message: message
+              message: "Діагностика домінуючої перцептивної модальності \n" + "\n" + message
           }
       }).then((response)=>{
           if (response.data.msg === 'success'){
@@ -194,7 +194,7 @@ class Test_1 extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="col-12">
         {this.state.result ? this.renderResult() : this.renderQuiz()}
         <NotificationContainer/>
       </div>

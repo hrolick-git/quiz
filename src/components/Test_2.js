@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
-import quizQuestionsTest2 from '../api/quizQuestionsTest2';
 import $ from 'jquery';
+import axios from 'axios';
+import quizQuestionsTest2 from '../api/quizQuestionsTest2';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import Result from './Result';
 
 const initialState = {
   counter: 0,
@@ -11,12 +14,15 @@ const initialState = {
   answerOptions: [],
   answer: '',
   answersCount: {
-    Visual: 0,
-    Audi: 0,
-    Kinest: 0
+
+      Visual: 0,
+      Audi: 0,
+      Kinest: 0,
   },
   result: '',
-  allAnswers: []
+  allAnswers: [],
+  showResults: false,
+  allAnswersCheck: false
 };
 
 class Test_2 extends Component {
@@ -26,6 +32,39 @@ class Test_2 extends Component {
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
     this.summCountAnswer = this.summCountAnswer.bind(this);
     this.handleAnswerClick = this.handleAnswerClick.bind(this);
+    this.handleAnswerSubmit = this.handleAnswerSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      axios({
+          method: "POST",
+          url:"https://powerful-badlands-17872.herokuapp.com/send",
+          data: {
+              name: name,
+              email: email,
+              message: "БІАС-тест для визначення репрезентативних систем \n" + "\n" + message
+          }
+      }).then((response)=>{
+          if (response.data.msg === 'success'){
+              this.resetForm();
+              this.setState(initialState);
+              this.setState({
+                showResults: false,
+                allAnswersCheck: false
+              });
+              NotificationManager.success('Ваша анкета була відправленна!');
+          }else if(response.data.msg === 'fail'){
+              NotificationManager.success('Ваша анкета була відправленна!');
+          }
+      })
+  }
+  resetForm(){
+    document.getElementById('contact-form').reset();
   }
 
   summCountAnswer(name) {
@@ -70,9 +109,26 @@ class Test_2 extends Component {
   }
 
   handleAnswerClick(e) {
-    if ($('div:not(:has(:radio:checked))').length) {
-        alert("At least one group is blank");
+    let setBtnEnable = () => {
+      this.setState({
+        allAnswersCheck: true
+      });
     }
+
+    $(":radio").change(function() {
+        var names = {};
+        $(':radio').each(function() {
+            names[$(this).attr('name')] = true;
+        });
+        var count = 0;
+        $.each(names, function() {
+            count++;
+        });
+        if ($(':radio:checked').length === count) {
+           $('.btn_result__top-text').hide();
+           setBtnEnable();
+        }
+    });
   }
 
   handleAnswerSelected(e){
@@ -84,10 +140,27 @@ class Test_2 extends Component {
     console.log(this.state.answersCount);
   }
 
+  handleAnswerSubmit(){
+    this.setState({
+      showResults: true
+    });
+    const answersCount = this.state.answersCount;
+    const answersCountKeys = Object.keys(answersCount);
+    const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
+    const maxAnswerCount = Math.max.apply(null, answersCountValues);
+    Array.prototype.sample = function(){
+      return this[Math.floor(Math.random()*this.length)];
+    }
+    let resultAnswer = answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
+    console.log("resultAnswer:"+resultAnswer);
+    console.log(answersCount);
+    let result = new Array(resultAnswer.sample());
+    this.setState({ result: result[0] });
+  }
 
-  render() {
-    return (
-      <div className="container">
+  renderQuiz2() {
+    return(
+      <div className="container my-0">
         <div className="row">
         </div>
         <div className="row">
@@ -154,13 +227,28 @@ class Test_2 extends Component {
         })}
       </div>
       <hr/>
-    <div className="col-12 text-center mb-5">
-        <button type="button" disabled>Перевірити результат</button>
+      <div className="col-12 text-center mb-5">
+          <p className="btn_result__top-text">Треба відповісти на усі запитання!</p>
+          <button type="button" onClick={this.handleAnswerSubmit} className="btn btn-primary" disabled={!this.state.allAnswersCheck}>Перевірити результат</button>
       </div>
     </div>
     );
   }
 
+  renderResult2() {
+    return(
+      <Result quizResult={this.state.result} allAnswers={this.state.allAnswers} handleSubmit={this.handleSubmit} />
+    );
+  }
+
+  render() {
+    return(
+      <div className="col-12">
+        {this.state.showResults ? this.renderResult2() : this.renderQuiz2()}
+        <NotificationContainer/>
+      </div>
+    );
+  }
 }
 
 export default Test_2;

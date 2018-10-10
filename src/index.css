@@ -36,8 +36,14 @@ body {
   list-style: none;
 }
 
+.nav-link {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
+  font-family: 'Pacifico', cursive;
+}
 .nav-link.active {
-  coloe: #ddd;
+  color: #94657E !important;
 }
 /* Question Component */
 .question {

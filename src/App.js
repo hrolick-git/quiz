@@ -21,10 +21,10 @@ class App extends Component {
         <Router>
           <div className="container pt-0 mt-2">
             <div className="row">
-              <div className="navbar navbar-expand-lg navbar-light bg-light">
+              <div className="navbar navbar-expand navbar-light bg-light mx-auto">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <NavLink className="nav-link" to="/">Головна</NavLink>
+                    <NavLink exact className="nav-link" to="/">Головна</NavLink>
                   </li>
                   <li>
                     <NavLink className="nav-link" to="/test-1">Модальність</NavLink>

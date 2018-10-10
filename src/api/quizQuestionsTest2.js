@@ -6,22 +6,22 @@ var quizQuestionsTest2 = [
           question: "а)	своїх емоціях, почуттях",
           answers: [
               {
-                  type: "Visual",
+                  type: "Kinest",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Visual",
+                  type: "Kinest",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Visual",
+                  type: "Kinest",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Visual",
+                  type: "Kinest",
                   content: "1",
                   positive: false
               }
@@ -31,22 +31,22 @@ var quizQuestionsTest2 = [
           question: "б)	те, як, я чув, вирішуються подібні питання",
           answers: [
               {
-                  type: "Visual",
+                  type: "Audi",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Visual",
+                  type: "Audi",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Visual",
+                  type: "Audi",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Visual",
+                  type: "Audi",
                   content: "1",
                   positive: false
               }
@@ -81,22 +81,22 @@ var quizQuestionsTest2 = [
           question: "г)	ретельному вивченні проблеми і фактів",
           answers: [
               {
-                  type: "Visual",
+                  type: "None",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Visual",
+                  type: "None",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Visual",
+                  type: "None",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Visual",
+                  type: "None",
                   content: "1",
                   positive: false
               }
@@ -136,22 +136,22 @@ var quizQuestionsTest2 = [
           question: "б)	ті картини, перспективи, які описує мій співрозмовник",
           answers: [
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "1",
                   positive: false
               }
@@ -161,22 +161,22 @@ var quizQuestionsTest2 = [
           question: "в)	логіка доказів співрозмовника",
           answers: [
               {
-                  type: "Audi",
+                  type: "None",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "None",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "None",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Audi",
+                  type: "None",
                   content: "1",
                   positive: false
               }
@@ -186,22 +186,22 @@ var quizQuestionsTest2 = [
           question: "г)	стикаюся я із щирими почуттями співрозмовника.",
           answers: [
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "1",
                   positive: false
               }
@@ -216,22 +216,22 @@ var quizQuestionsTest2 = [
           question: "а)	його манера одягатися",
           answers: [
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "1",
                   positive: false
               }
@@ -241,22 +241,22 @@ var quizQuestionsTest2 = [
           question: "б)	його емоційність, почуття, які я поділяю",
           answers: [
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "1",
                   positive: false
               }
@@ -266,22 +266,22 @@ var quizQuestionsTest2 = [
           question: "в)	аргументи, які він використовує для доказу своїх суджень і які я теж використовую в розмові",
           answers: [
               {
-                  type: "Audi",
+                  type: "None",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "None",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "None",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Audi",
+                  type: "None",
                   content: "1",
                   positive: false
               }
@@ -346,22 +346,22 @@ var quizQuestionsTest2 = [
           question: "б)	підібрати найбільш розумні, переконливі аргументи, пов'язані з цікавить мене предмету",
           answers: [
               {
-                  type: "Audi",
+                  type: "None",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "None",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "None",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Audi",
+                  type: "None",
                   content: "1",
                   positive: false
               }
@@ -371,22 +371,22 @@ var quizQuestionsTest2 = [
           question: "в)	вибрати найбільш зручні меблі",
           answers: [
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "1",
                   positive: false
               }
@@ -396,22 +396,22 @@ var quizQuestionsTest2 = [
           question: "г)	підібрати для одягу, інтер'єру та ін. багаті колірні комбінації",
           answers: [
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "1",
                   positive: false
               }
@@ -451,22 +451,22 @@ var quizQuestionsTest2 = [
           question: "б)	відчуваю себе «у своїй тарілці», коли мені треба довести правильність будь-якого положення, з'ясувати причину якої-небудь події, побудувати ланцюг логічних умовиводів",
           answers: [
               {
-                  type: "Audi",
+                  type: "None",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "None",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "None",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Audi",
+                  type: "None",
                   content: "1",
                   positive: false
               }
@@ -476,22 +476,22 @@ var quizQuestionsTest2 = [
           question: "в)	я дуже чутливий до того, наскільки зручна мій одяг, чи приємно мені в ній перебувати, рухатися і інше",
           answers: [
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Audi",
+                  type: "Kinest",
                   content: "1",
                   positive: false
               }
@@ -501,22 +501,22 @@ var quizQuestionsTest2 = [
           question: "г)	на мене справляє сильне враження освітлення і загальний вигляд обстановки, приміщення",
           answers: [
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "4",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "3",
                   positive: true
               },
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "2",
                   positive: false
               },
               {
-                  type: "Audi",
+                  type: "Visual",
                   content: "1",
                   positive: false
               }

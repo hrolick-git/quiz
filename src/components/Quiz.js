@@ -21,7 +21,7 @@ function Quiz(props) {
   }
 
   return (
-    <div className="container my-0">
+    <div className="container my-0 text-center">
       <div key={props.questionId} className="col-12">
         <QuestionCount
           counter={props.questionId}

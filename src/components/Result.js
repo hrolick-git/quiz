@@ -29,7 +29,7 @@ const Result = (props) => (
     transitionAppear
     transitionAppearTimeout={500}
   >
-    <div className="container mt-0">
+    <div className="container mt-0 text-center">
       <div className="row">
         <div className="col-12">
           <h2 className="result__title">Твій тип сприйняття <strong>{props.quizResult}</strong>!</h2>
