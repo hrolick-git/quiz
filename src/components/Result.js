@@ -40,9 +40,9 @@ const Result = (props) => (
               <div className="form-group">
                   <input type="text" className="form-control" id="name" placeholder="Твоє ім'я*" required />
               </div>
-              <div className="form-group">
+              {/* <div className="form-group">
                   <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Твоя електронна адреса*" required />
-              </div>
+              </div> */}
               <div className="form-group d-none">
                 <textarea className="form-control" rows="5" id="message" onChange={handleChange} value={(props.quizResult+"\n"+ props.allAnswers.join("\n"))}></textarea>
               </div>

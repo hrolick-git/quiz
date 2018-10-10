@@ -39,14 +39,14 @@ class Test_2 extends Component {
   handleSubmit(e){
       e.preventDefault();
       const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
+      // const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
       axios({
           method: "POST",
           url:"https://powerful-badlands-17872.herokuapp.com/send",
           data: {
               name: name,
-              email: email,
+              // email: email,
               message: "БІАС-тест для визначення репрезентативних систем \n" + "\n" + message
           }
       }).then((response)=>{

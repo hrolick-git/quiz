@@ -195,14 +195,13 @@ input:checked + .quiz_answer_negative.quiz_answer_circle,
   background: #94657E;
 }
 .quiz_answer__text {
-  color: #4C4C4C;
   font-size: 16px;
   font-weight: bold;
-  font-style: italic;
+  color: #666;
 }
 @media screen and (min-width: 576px) {
   .quiz_answer__text {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 .quiz__wrap {

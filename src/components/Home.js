@@ -11,12 +11,12 @@ export default class Home extends Component {
                   <p className="quiz_subtitle d-block mb-sm-5 col-12 mt-3">Тести для учнів</p>
               </div>
               <div className="col-12 text-center">
-                <img class="d-inline-block w-50" src="../images/quiz_extraverted.png" alt="First slide" />
-                <img class="d-inline-block w-50" src="../images/quiz_feeling.png" alt="Second slide" />
-                <img class="d-inline-block w-50" src="../images/quiz_introverted.png" alt="Third slide" />
-                <img class="d-inline-block w-50" src="../images/quiz_intuitive.png" alt="Third slide" />
-                <img class="d-inline-block w-50" src="../images/quiz_observant.png" alt="Third slide" />
-                <img class="d-inline-block w-50" src="../images/quiz_thinking.png" alt="Third slide" />
+                <img className="d-inline-block w-50" src="../images/quiz_extraverted.png" alt="First slide" />
+                <img className="d-inline-block w-50" src="../images/quiz_feeling.png" alt="Second slide" />
+                <img className="d-inline-block w-50" src="../images/quiz_introverted.png" alt="Third slide" />
+                <img className="d-inline-block w-50" src="../images/quiz_intuitive.png" alt="Third slide" />
+                <img className="d-inline-block w-50" src="../images/quiz_observant.png" alt="Third slide" />
+                <img className="d-inline-block w-50" src="../images/quiz_thinking.png" alt="Third slide" />
               </div>
             </div>
           </div>
