@@ -47,7 +47,6 @@ class Test_1 extends Component {
   handleSubmit(e){
       e.preventDefault();
       const name = document.getElementById('name').value;
-      // const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
       this.setState({sending:true});
       axios({
@@ -55,7 +54,6 @@ class Test_1 extends Component {
           url:"https://powerful-badlands-17872.herokuapp.com/send",
           data: {
               name: name,
-              // email: email,
               message: "Діагностика домінуючої перцептивної модальності \n" + "\n" + message
           }
       }).then((response)=>{
@@ -79,20 +77,6 @@ class Test_1 extends Component {
 
   shuffleArray(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
-    //
-    // // While there remain elements to shuffle...
-    // while (0 !== currentIndex) {
-    //
-    //   // Pick a remaining element...
-    //   randomIndex = Math.floor(Math.random() * currentIndex);
-    //   currentIndex -= 1;
-    //
-    //   // And swap it with the current element.
-    //   temporaryValue = array[currentIndex];
-    //   array[currentIndex] = array[randomIndex];
-    //   array[randomIndex] = temporaryValue;
-    // }
-
     return array;
   };
 
