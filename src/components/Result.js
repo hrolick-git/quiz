@@ -43,7 +43,7 @@ const Result = (props) => (
     <div className="container mt-0 text-center">
       <div className="row">
         <div className="col-12">
-          <h2 className="result__title">Твій тип сприйняття <strong>{switchImages(props.quizResult)}</strong>!</h2>
+          <h2 className="result__title">Твій тип сприйняття <strong>{switchTitleResults(props.quizResult)}</strong>!</h2>
           {switchImages(props.quizResult)}
         </div>
         <div className="col-12 col-md-8 col-lg-7 mt-4 mx-auto">
