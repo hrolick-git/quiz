@@ -540,7 +540,7 @@ var quizQuestionsTest1 = [
       ]
   },
   {
-      question: "37. У мене непогана стереоапаратура.",
+      question: "37. У мене непогана стереоаппаратура.",
       answers:  [
           {
               type: "Audi",
@@ -585,7 +585,7 @@ var quizQuestionsTest1 = [
       ]
   },
   {
-      question: "40. Ненавиджу безлад.",
+      question: "40. Не виношу безлад.",
       answers:  [
           {
               type: "Visual",
